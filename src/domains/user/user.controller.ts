@@ -3,12 +3,16 @@ import { Brand } from "../brand/Brand.model";
 import { BrandService } from "../brand/Brand.service";
 import { User } from "./user.model";
 import { UserService } from "./user.service";
+import { Student } from "../student/student.model";
+import { StudentService } from "../student/Student.service";
+
 
 @Controller('user')
 export class UserController {
     constructor(
         private readonly userService: UserService,
-        private readonly brandService: BrandService
+        private readonly brandService: BrandService,
+        private readonly studentService: StudentService
     ) {
 
     }
@@ -46,5 +50,15 @@ export class UserController {
         }
 
         return brand;
+    }
+
+    @Get(':id/Student')
+    getStudentById(@Param('id') id: string): Student{
+        // const idUser = parseInt(id,10);
+        const user = this.getById(id);
+
+        const student = this.studentService.getById(user.student?.id)
+        
+        return student;
     }
 }
