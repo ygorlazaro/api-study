@@ -59,6 +59,10 @@ export class UserController {
 
         const student = this.studentService.getById(user.student?.id)
         
+        if (student === undefined){
+            throw new NotFoundException("Este usuário não é um estudante.")
+        }
+
         return student;
     }
 }
