@@ -1,4 +1,3 @@
-
 export interface IBaseModel {
     id: number;
 }
@@ -8,8 +7,8 @@ interface IService<TModel> {
     getAll(): TModel[];
 }
 
-export abstract class AbstractService<TModel extends IBaseModel> implements IService<TModel> {
-
+export abstract class AbstractService<TModel extends IBaseModel>
+    implements IService<TModel> {
     private data: TModel[] = [];
 
     constructor(data: TModel[]) {
@@ -30,6 +29,6 @@ export abstract class AbstractService<TModel extends IBaseModel> implements ISer
         // console.log(first instanceof Student)
         // console.log(first instanceof Brand)
 
-        return this.data.find(model => model.id === id)
+        return this.data.find((model) => model.id === id);
     }
 }

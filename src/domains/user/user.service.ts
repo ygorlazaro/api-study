@@ -9,19 +9,19 @@ export class UserService {
         return users;
     }
 
-    getById(idUser: number): User | undefined { 
-        return users.find(user => user.id === idUser);
+    getById(idUser: number): User | undefined {
+        return users.find((user) => user.id === idUser);
     }
 
-    getNameById(idUser: number): IUserName | undefined { 
-        const user = users.find(user => user.id === idUser);
+    getNameById(idUser: number): IUserName | undefined {
+        const user = users.find((user) => user.id === idUser);
 
-        if (user === undefined){
+        if (user === undefined) {
             return undefined;
         }
 
         return {
             name: user.name
-        }
+        };
     }
 }

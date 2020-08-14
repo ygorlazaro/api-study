@@ -5,6 +5,6 @@ import { UserModule } from "./domains/user/user.module";
 import { StudentModule } from "./domains/student/Student.module";
 
 @Module({
-    imports:[AppModule, UserModule, BrandModule, StudentModule]
+    imports: [AppModule, UserModule, BrandModule, StudentModule]
 })
 export class MainModule {}

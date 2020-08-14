@@ -12,6 +12,6 @@ export class StudentService extends AbstractService<Student> {
     }
 
     getByName(nameStudent: string): Student | undefined {
-        return students.find(students => students.name === nameStudent)
+        return students.find((students) => students.name === nameStudent);
     }
 }
