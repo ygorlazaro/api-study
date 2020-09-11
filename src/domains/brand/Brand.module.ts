@@ -7,4 +7,4 @@ import { BrandService } from "./Brand.service";
     providers: [BrandService],
     exports: [BrandService]
 })
-export class BrandModule{}
+export class BrandModule {}
